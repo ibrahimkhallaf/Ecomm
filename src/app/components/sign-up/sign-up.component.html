@@ -1,1 +1,28 @@
-<p>sign-up works!</p>
+<div class="w-75 mx-auto my-5 ">
+<h2>Register Now :</h2>
+<form  [formGroup]="reg" (ngSubmit)="submidData()" >
+
+    <label class="form-label" for="name">Name:</label>
+    <input type="text" class="form-control mb-2" id="name" formControlName="name" >
+    <alertError [formName]="reg" controlName="name"></alertError>
+
+    <label class="form-label" for="email">Email:</label>
+    <input type="text" class="form-control mb-2" id="email" formControlName="email" >
+    <alertError [formName]="reg" controlName="email"></alertError>
+
+    <label class="form-label" for="Password">Password:</label>
+    <input type="password"class="form-control mb-2" id="Password" formControlName="password" >
+    <alertError [formName]="reg" controlName="password"></alertError>
+
+
+    <label class="form-label" for="rePassword">rePassword:</label>
+    <input type="password" class="form-control mb-2" id="rePassword" formControlName="rePassword" >
+    <alertError [formName]="reg" controlName="rePassword"></alertError>
+
+
+    <div class="d-flex justify-content-end mt-3 ">
+    <button  class="btn bg-main text-white" [disabled]="reg.invalid">Submit</button>
+    </div>
+</form>
+
+</div>

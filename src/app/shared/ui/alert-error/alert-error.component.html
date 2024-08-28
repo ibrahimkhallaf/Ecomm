@@ -1,0 +1,32 @@
+@if (formName.get(controlName)?.errors && formName.get(controlName)?.touched) {
+    <div class="alert alert-danger m-0 p-1">
+        <ul class="m-0">
+            @if (formName.get(controlName)?.getError('required')) {
+                <li  class="m-0">Input Is required</li>
+            }
+
+            @if (formName.get(controlName)?.getError('minlength')) {
+                <li class="m-0">Input must be at least 2 chars long </li>
+            }
+
+            @if (formName.get(controlName)?.getError('maxlength')) {
+                <li class="m-0">Input must not exceed 20 characters</li>
+            }
+
+            @if (formName.get(controlName)?.getError('pattern')) {
+                <li class="m-0">Please Enter valid password </li>
+            }
+
+            @if (formName.get(controlName)?.getError('email')) {
+                <li class="m-0">Custom filed should match the pattern</li>
+            }
+        </ul>
+    </div>
+}@else if (formName.getError('mismatch') && formName.get(controlName)?.touched && controlName=="rePassword") {
+    <div class="alert alert-danger m-0 p-1">
+        <ul class="m-0">
+            <li class="m-0">Passward Not Matched</li>
+        </ul>
+    </div>
+
+}

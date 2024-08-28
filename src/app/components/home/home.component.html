@@ -1,13 +1,13 @@
 <div class="container mt-5">
     <div class="row">
         @for (item of allProduct; track item.id) {
-            <div class="col-md-2 product  p-2">
-                <img [src]='item.imageCover' class="w-100" alt="">
-                <h6 class="text-main ">{{item.category.name}}</h6>
-                <h5 class="fw-bold" > {{item.title.split(' ').slice(0,2).join()}} </h5>
-                <div class="d-flex m-auto  justify-content-between">
+            <div class="col-md-3 col-lg-2 product p-2">
+                <img [src]='item.imageCover' class="w-100 mb-2" alt="">
+                <h6 class="text-main mb-0  ">{{item.category.name}}</h6>
+                <h5 class=" fw-bold" > {{item.title.split(' ').slice(0,2).join()}} </h5>
+                <div class="d-flex m-auto pe-3  justify-content-between">
                     <span>{{item.price}} EG</span>
-                    <span><i class="fa-solid fa-star rating-color"></i>{{item.ratingsAverage}}</span>
+                    <span><i class="fa-solid fa-star rating-color px-1"></i>{{item.ratingsAverage}}</span>
                 </div>
                 <button class="btn bg-main text-white w-100 my-2">Add To Cart</button>
             </div>
